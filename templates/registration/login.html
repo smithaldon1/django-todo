@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="buttons mt-3 p-2">
+    <a class="btn btn-secondary" href="{% url 'home' %}">Home</a>
+</div>
+<div class="col-8 offset-2">
+    <div class="text-center mt-1">
+        <h2>Log In</h2>
+    </div>
+    <div class="card mt-3 p-2">
+        <form method="post" class="mx-auto">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p class="text-center mt-3">Don't have an account? <a href="{% url 'signup' %}">Sign Up!</a></p>
+            <p class="text-center my-3"><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+            <div class="button text-center">
+                <button class="btn btn-primary mb-3" type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="text-center">
+        <h1>Todo Detail</h1>
+    </div>
+    <div class="col-4 offset-4">
+        <a href="/" class="btn btn-secondary">Go Back</a>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>Task Name: </h5>
+                <h4>{{ todo.name }}</h4>
+            </div>
+            <div class="card-body">
+                <h5>Task Description: </h5>
+                <p>{{ todo.description }}</p>
+                <h5>Due-Date: </h5>
+                <h4 class="text-danger">{{ todo.due_date }}</h4>
+            </div>
+            <div class="card-footer">
+                <a href="/{{todo.id}}/update" class="btn btn-secondary">Update this todo.</a>
+                <a href="/{{todo.id}}/delete" class="btn btn-danger">DELETE TODO</a>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+{% endblock %}
